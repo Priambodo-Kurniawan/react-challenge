@@ -58,3 +58,23 @@ span.label {
   max-width: 210px;
   margin: auto;
 }
+
+.big-radio+label:before, [type="radio"]+label:after {
+  width: 30px;
+  height: 30px;
+}
+.radio-image {
+  max-width: 20%;
+}
+.radio-image img {
+  height: auto;
+  top: -110px;
+  position: relative;
+  left: -43px;
+  height: auto;
+}
+.mouth-img-wrapper {
+  overflow: hidden;
+  max-width: 125px;
+  max-height: 125px;
+}

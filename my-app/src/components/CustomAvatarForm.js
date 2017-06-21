@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
 
-import {Row, Input, Col} from 'react-materialize'
+import {Row, Col} from 'react-materialize'
 
 import {
   changeTypeAction,

@@ -10,7 +10,6 @@ import {
 import './Main.css';
 import {Row, Col} from 'react-materialize'
 import CustomAvatarForm from './CustomAvatarForm.js'
-import Avatar from './Avatar.js'
 
 class Main extends Component {
   componentWillMount() {
@@ -38,22 +37,41 @@ class Main extends Component {
       <div className="Main">
         <div className="form-section">
           <div className="container">
-          <Row>
-            <Col s={6} className="flex-center">
-              <img
-              src={`https://api.adorable.io/avatars/face/${this.state.eyes}/${this.state.nose}/${this.state.mouth}/FF9800`}
-              style={{
-                borderRadius:`${this.props.face.borderRadius}%`,
-                width:`${this.props.face.size}px`,
-                height:`${this.props.face.size}px`,
-                margin: 'auto'
-              }} alt='' />
-            </Col>
-            <Col s={6}>
-              <h5 className="title is-1">{this.props.face.title}</h5>
-              <CustomAvatarForm />
-            </Col>
-          </Row>
+            <Row>
+              <Col s={6} className="flex-center">
+                <img
+                src={`https://api.adorable.io/avatars/face/${this.state.eyes}/${this.state.nose}/${this.state.mouth}/FF9800`}
+                style={{
+                  borderRadius:`${this.props.face.borderRadius}%`,
+                  width:`${this.props.face.size}px`,
+                  height:`${this.props.face.size}px`,
+                  margin: 'auto'
+                }} alt='' />
+              </Col>
+              <Col s={6}>
+                <h5 className="title is-1">{this.props.face.title}</h5>
+                <CustomAvatarForm />
+              </Col>
+            </Row>
+            <Row>
+              <ul>
+                <li className="radio-image">
+                  <p>
+                    <input name="group1" type="radio" id="test1" value='urban' className='big-radio' />
+                    <label htmlFor="test1">
+                      <div className="mouth-img-wrapper">
+                        <img
+                          src={`https://api.adorable.io/avatars/face/${this.state.eyes}/${this.state.nose}/${this.state.mouth}/FF9800`}
+                          style={{
+                            width:'200px',
+                            margin: 'auto'
+                          }} alt='' />
+                      </div>
+                    </label>
+                  </p>
+                </li>
+              </ul>
+            </Row>
           <div className="columns">
           </div>
           </div>
