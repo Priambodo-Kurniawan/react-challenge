@@ -1,55 +1,60 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-class Avatar extends React.Component {
-  render () {
-    if(this.props.type === 'robo'){
-      return (
-        <img
-          src={`https://robohash.org/${this.props.name}`}
-          style={{
-            borderRadius:`${this.props.borderRadius}%`,
-            width:`${this.props.size}px`,
-            height:`${this.props.size}px`,
-            backgroundColor: '#313131',
-            margin: 'auto',
-          }} alt='' />
-      )
-    } else if (this.props.type === 'female-pixel'){
-      return (
-        <img
-          src={`https://avatars.dicebear.com/v1/female/${this.props.name}/200.png`}
-          style={{
-            borderRadius:`${this.props.borderRadius}%`,
-            width:`${this.props.size}px`,
-            height:`${this.props.size}px`,
-            backgroundColor: '#313131',
-            margin: 'auto',
-          }} alt='' />
-      )
-    } else if (this.props.type === 'male-pixel'){
-      return (
-        <img
-          src={`https://avatars.dicebear.com/v1/male/${this.props.name}/200.png`}
-          style={{
-            borderRadius:`${this.props.borderRadius}%`,
-            width:`${this.props.size}px`,
-            height:`${this.props.size}px`,
-            backgroundColor: '#313131',
-            margin: 'auto',
-          }} alt='' />
-      )
-    }
+const AvatarForm = (props) => {
+  if(props.face.type === 'robo'){
     return (
       <img
-      src={`https://api.adorable.io/avatars/${this.props.size}/${this.props.name}`}
-      style={{
-        borderRadius:`${this.props.borderRadius}%`,
-        width:`${this.props.size}px`,
-        height:`${this.props.size}px`,
-        margin: 'auto'
-      }} alt='' />
+        src={`https://robohash.org/${props.face.name}`}
+        style={{
+          borderRadius:`${props.face.borderRadius}%`,
+          width:`${props.face.size}px`,
+          height:`${props.face.size}px`,
+          backgroundColor: '#313131',
+          margin: 'auto',
+        }} alt='' />
+    )
+  } else if (props.face.type === 'female-pixel'){
+    return (
+      <img
+        src={`https://avatars.dicebear.com/v1/female/${props.face.name}/200.png`}
+        style={{
+          borderRadius:`${props.face.borderRadius}%`,
+          width:`${props.face.size}px`,
+          height:`${props.face.size}px`,
+          backgroundColor: '#313131',
+          margin: 'auto',
+        }} alt='' />
+    )
+  } else if (props.face.type === 'male-pixel'){
+    return (
+      <img
+        src={`https://avatars.dicebear.com/v1/male/${props.face.name}/200.png`}
+        style={{
+          borderRadius:`${props.face.borderRadius}%`,
+          width:`${props.face.size}px`,
+          height:`${props.face.size}px`,
+          backgroundColor: '#313131',
+          margin: 'auto',
+        }} alt='' />
     )
   }
+  return (
+    <img
+    src={`https://api.adorable.io/avatars/${props.face.size}/${props.face.name}`}
+    style={{
+      borderRadius:`${props.face.borderRadius}%`,
+      width:`${props.face.size}px`,
+      height:`${props.face.size}px`,
+      margin: 'auto'
+    }} alt='' />
+  )
 }
 
-export default Avatar;
+const mapStateToProps = (state) => {
+  return {
+    face: state.face,
+  };
+}
+
+export default connect(mapStateToProps, null)(AvatarForm);

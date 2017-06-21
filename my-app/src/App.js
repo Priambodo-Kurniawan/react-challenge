@@ -1,5 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Provider } from 'react-redux'
+
+import store from './store/configureStore';
 
 import {
   Main,
@@ -9,14 +12,16 @@ import {
 class App extends React.Component {
   render() {
     return (
-      <BrowserRouter>
-        <div>
-          <Switch>
-            <Route exact path="/" component={Main} />
-            <Route component={Page404} />
-          </Switch>
-        </div>
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <div>
+            <Switch>
+              <Route exact path="/" component={Main} />
+              <Route component={Page404} />
+            </Switch>
+          </div>
+        </BrowserRouter>
+      </Provider>
     );
   }
 }
