@@ -10,14 +10,12 @@ body {
   background-image: url('/img/background.svg');
   background-size: cover;
 }
-
 .avatar-form {
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 10px;
   color: white;
 }
-
 h2.title.is-1 {
   font-weight: lighter;
   color: white;
@@ -26,7 +24,9 @@ h2.title.is-1 {
 input[type=range] {
   border: 0;
 }
-input[type=text], input[type=text]:focus:not([readonly]) {
+input[type=text],
+input[type=text]:focus:not([readonly]),
+input[type=text].valid {
   border-bottom: 3px solid #c2c0c2;
   box-shadow: none;
 }
@@ -46,4 +46,9 @@ span.label {
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+.typeRadio {
+  padding: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
 }

@@ -32,8 +32,10 @@ class AvatarForm extends React.Component {
           <Col s={12}>
             <span className="label">Avatar Type</span>
             <div className="typeRadio">
-              <Input name='type' type='radio' value='urban' label='Urban' className='with-gap' onClick={(e) => this.props.changeType(e.target.value)} />
-              <Input name='type' type='radio' value='robo' label='Robo' className='with-gap' onClick={(e) => this.props.changeType(e.target.value)} />
+              <Input s={6} name='type' type='radio' value='urban' label='Urban' className='with-gap' onClick={(e) => this.props.changeType(e.target.value)} />
+              <Input s={6} name='type' type='radio' value='male-pixel' label='Male-Pixel' className='with-gap' onClick={(e) => this.props.changeType(e.target.value)} />
+              <Input s={6} name='type' type='radio' value='robo' label='Robo' className='with-gap' onClick={(e) => this.props.changeType(e.target.value)} />
+              <Input s={6} name='type' type='radio' value='female-pixel' label='Female-Pixel' className='with-gap' onClick={(e) => this.props.changeType(e.target.value)} />
             </div>
           </Col>
         </Row>

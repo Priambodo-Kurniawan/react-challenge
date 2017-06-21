@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import './App.css';
+import './Main.css';
 import axios from 'axios';
 
 import {Row, Col} from 'react-materialize'
 import AvatarForm from './AvatarForm.js'
+import Avatar from './Avatar.js'
 
 class App extends Component {
   constructor() {
@@ -78,26 +79,12 @@ class App extends Component {
                 />
             </Col>
             <Col s={6} className="flex-center">
-              { (this.state.type === 'urban') ? (
-                <img
-                src={`https://api.adorable.io/avatars/${this.state.size}/${this.state.name}`}
-                style={{
-                  borderRadius:`${this.state.borderRadius}%`,
-                  width:`${this.state.size}`,
-                  height:`${this.state.size}`,
-                  margin: 'auto'
-                }} alt='' />
-              ) : (
-                <img
-                src={`https://robohash.org/${this.state.name}`}
-                style={{
-                  borderRadius:`${this.state.borderRadius}%`,
-                  width:`${this.state.size}`,
-                  height:`${this.state.size}`,
-                  backgroundColor: '#313131',
-                  margin: 'auto',
-                }} alt='' />
-              )}
+              <Avatar
+                type={this.state.type}
+                name={this.state.name}
+                borderRadius={this.state.borderRadius}
+                size={this.state.size}
+              />
               { (this.state.name !== 'default') ? <h5 className="center-align">Hello <strong>{this.state.name}</strong>!</h5> : null }
             </Col>
           </Row>
