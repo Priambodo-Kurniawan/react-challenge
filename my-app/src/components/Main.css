@@ -52,3 +52,9 @@ span.label {
   display: flex;
   flex-wrap: wrap;
 }
+
+.btn-rounded {
+  border-radius: 59px;
+  max-width: 210px;
+  margin: auto;
+}

@@ -8,20 +8,6 @@ import AvatarForm from './AvatarForm.js'
 import Avatar from './Avatar.js'
 
 class Main extends Component {
-  componentWillMount() {
-    this.getData()
-  }
-
-  getData() {
-    axios.get('https://api.adorable.io/avatars/list', {headers: {'Access-Control-Allow-Origin': '*'}})
-    .then(function (response) {
-      console.log(response.data);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-  }
-
   render() {
     return (
       <div className="Main">

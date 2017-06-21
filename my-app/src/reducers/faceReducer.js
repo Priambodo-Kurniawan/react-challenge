@@ -3,7 +3,7 @@ const initialState = {
   name: 'default',
   size: 280,
   borderRadius: 10,
-  type: 'robo',
+  type: 'urban',
 }
 
 export default (state = initialState, action) => {
