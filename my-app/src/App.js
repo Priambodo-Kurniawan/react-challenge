@@ -8,6 +8,7 @@ import {
   Main,
   Page404,
   Footer,
+  Header,
   CustomAvatarPage,
 } from './components';
 
@@ -17,6 +18,7 @@ class App extends React.Component {
       <Provider store={store}>
         <BrowserRouter>
           <div>
+            <Header />
             <Switch>
               <Route exact path="/" component={Main} />
               <Route exact path="/create" component={CustomAvatarPage} />

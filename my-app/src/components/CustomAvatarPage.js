@@ -22,9 +22,9 @@ class Main extends Component {
                   height:`${this.props.face.size}px`,
                   margin: 'auto'
                 }} alt='' />
+                <h5 className="title is-1 center-align">Avatar Creator</h5>
               </Col>
               <Col s={6}>
-                <h5 className="title is-1">{this.props.face.title}</h5>
                 <CustomAvatarForm />
               </Col>
             </Row>
