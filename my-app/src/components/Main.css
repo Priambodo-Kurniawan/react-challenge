@@ -59,7 +59,7 @@ span.label {
   margin: auto;
 }
 
-.hide-radio+label:before, [type="radio"]+label:after {
+.hide-radio+label:before {
   display: none;
 }
 .radio-image {
