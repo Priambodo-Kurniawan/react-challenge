@@ -16,7 +16,15 @@ const FaceComponentChoice = (props) => {
         id={`${props.nose || props.eyes || props.mouth }`}
         value={`${props.nose || props.eyes || props.mouth }`}
         className='hide-radio'
-        onChange={(e) => props.changeEyes(e.target.value)}
+        onClick={(e) => {
+          if (props.eyes){
+            props.changeEyes(e.target.value)
+          } else if (props.nose) {
+            props.changeNose(e.target.value)
+          } else if (props.mouth) {
+            props.changeMouth(e.target.value)
+          }
+        }}
       />
       <label htmlFor={`${props.nose || props.eyes || props.mouth }`} style={{
         height: 90,
@@ -35,10 +43,6 @@ const FaceComponentChoice = (props) => {
     </li>
   )
 }
-
-// function getChoice (val) {
-//   console.log(val);
-// }
 
 const mapDispatchToProps = (dispatch) => {
   return {
