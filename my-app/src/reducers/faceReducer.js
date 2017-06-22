@@ -61,5 +61,14 @@ export default (state = initialState, action) => {
   else if(action.type === 'CHANGE_COLOR') {
     return {...state, components: {...state.components, color: action.payload}};
   }
+  else if(action.type === 'CHANGE_EYES') {
+    return {...state, components: {...state.components, eyes: action.payload}};
+  }
+  else if(action.type === 'CHANGE_MOUTH') {
+    return {...state, components: {...state.components, mouth: action.payload}};
+  }
+  else if(action.type === 'CHANGE_NOSE') {
+    return {...state, components: {...state.components, nose: action.payload}};
+  }
   return state
 }

@@ -18,7 +18,7 @@ const TabChoices = (props) => {
           <h4><strong>Mouth Choices</strong></h4>
           <ul style={{display:'flex', flexWrap: 'wrap'}}>
             {props.face.mouths.map((mouth) => (
-              <FaceComponentChoice mouth={mouth} key={mouth} className={'mouth-img-wrapper'}/>
+              <FaceComponentChoice mouth={mouth} name={'mouth'} key={mouth} className={'mouth-img-wrapper'}/>
             ))}
           </ul>
         </div>
@@ -28,7 +28,7 @@ const TabChoices = (props) => {
           <h4><strong>Nose Choices</strong></h4>
           <ul style={{display:'flex', flexWrap: 'wrap'}}>
             {props.face.noses.map((nose) => (
-              <FaceComponentChoice nose={nose} key={nose} className={'mouth-img-wrapper nose'}/>
+              <FaceComponentChoice nose={nose} name={'nose'} key={nose} className={'mouth-img-wrapper nose'}/>
             ))}
           </ul>
         </div>
@@ -38,7 +38,7 @@ const TabChoices = (props) => {
           <h4><strong>Eyes Choices</strong></h4>
           <ul style={{display:'flex', flexWrap: 'wrap'}}>
             {props.face.eyes.map((eye) => (
-              <FaceComponentChoice width={'100px'} eyes={eye} key={eye} className={'mouth-img-wrapper eyes'}/>
+              <FaceComponentChoice width={'100px'} name={'eyes'} eyes={eye} key={eye} className={'mouth-img-wrapper eyes'}/>
             ))}
           </ul>
         </div>

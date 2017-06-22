@@ -1,10 +1,24 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import {
+  changeEyesAction,
+  changeMouthAction,
+  changeNoseAction,
+} from '../actions';
 
 const FaceComponentChoice = (props) => {
   return (
     <li className="radio-image" style={{width:`${props.width || '135px'}`}} >
-      <input name="group1" type="radio" id="test1" value='urban' className='hide-radio' />
-      <label htmlFor="test1" style={{
+      <input
+        name={`${props.name || 'group'}`}
+        type="radio"
+        id={`${props.nose || props.eyes || props.mouth }`}
+        value={`${props.nose || props.eyes || props.mouth }`}
+        className='hide-radio'
+        onChange={(e) => props.changeEyes(e.target.value)}
+      />
+      <label htmlFor={`${props.nose || props.eyes || props.mouth }`} style={{
         height: 90,
         padding: 0
       }}>
@@ -14,12 +28,24 @@ const FaceComponentChoice = (props) => {
             style={{
               width:'200px',
               margin: 'auto'
-            }} alt='' />
+            }} alt=''
+          />
         </div>
       </label>
     </li>
   )
 }
 
+// function getChoice (val) {
+//   console.log(val);
+// }
 
-export default FaceComponentChoice;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    changeEyes: (type) => dispatch(changeEyesAction(type)),
+    changeMouth: (type) => dispatch(changeMouthAction(type)),
+    changeNose: (type) => dispatch(changeNoseAction(type)),
+  }
+}
+
+export default connect(null, mapDispatchToProps)(FaceComponentChoice);

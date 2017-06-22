@@ -34,8 +34,8 @@ const CustomAvatarForm = (props) => {
       </Row>
       <Row>
         <Col s={12}>
-          <span className="label">Border Radius</span>
-          <span className="results-label">{props.face.borderRadius}%</span>
+          <span className="label">Selected Color</span>
+          <span className="results-label">#{props.face.components.color}</span>
           <p className="range-field">
           <input type="color" name="favcolor" onChange={(e) => props.changeColor(replaceColor(e.target.value))} />
           </p>

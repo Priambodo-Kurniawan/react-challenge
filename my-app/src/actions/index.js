@@ -32,3 +32,22 @@ export const changeColorAction = (value) => {
     payload: value,
   }
 }
+
+export const changeEyesAction = (value) => {
+  return {
+    type: 'CHANGE_EYES',
+    payload: value,
+  }
+}
+export const changeNoseAction = (value) => {
+  return {
+    type: 'CHANGE_NOSE',
+    payload: value,
+  }
+}
+export const changeMouthAction = (value) => {
+  return {
+    type: 'CHANGE_MOUTH',
+    payload: value,
+  }
+}
