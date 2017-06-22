@@ -8,6 +8,7 @@ import {
   changeNameAction,
   changeSizeAction,
   changeBorderRadiusAction,
+  changeColorAction,
 } from '../actions';
 
 const CustomAvatarForm = (props) => {
@@ -31,8 +32,21 @@ const CustomAvatarForm = (props) => {
           </p>
         </Col>
       </Row>
+      <Row>
+        <Col s={12}>
+          <span className="label">Border Radius</span>
+          <span className="results-label">{props.face.borderRadius}%</span>
+          <p className="range-field">
+          <input type="color" name="favcolor" onChange={(e) => props.changeColor(replaceColor(e.target.value))} />
+          </p>
+        </Col>
+      </Row>
     </div>
   )
+}
+
+function replaceColor(value) {
+  return value.slice(1)
 }
 
 const mapDispatchToProps = (dispatch) => {
@@ -41,6 +55,7 @@ const mapDispatchToProps = (dispatch) => {
     changeName: (name) => dispatch(changeNameAction(name)),
     changeSize: (size) => dispatch(changeSizeAction(size)),
     changeBorderRadius: (value) => dispatch(changeBorderRadiusAction(value)),
+    changeColor: (value) => dispatch(changeColorAction(value)),
   }
 }
 

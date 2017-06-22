@@ -59,12 +59,11 @@ span.label {
   margin: auto;
 }
 
-.big-radio+label:before, [type="radio"]+label:after {
-  width: 30px;
-  height: 30px;
+.hide-radio+label:before, [type="radio"]+label:after {
+  display: none;
 }
 .radio-image {
-  max-width: 20%;
+  padding: 5px;
 }
 .radio-image img {
   height: auto;
@@ -76,5 +75,19 @@ span.label {
 .mouth-img-wrapper {
   overflow: hidden;
   max-width: 125px;
-  max-height: 125px;
+  max-height: 85px;
+}
+.nose img {
+  top: -70px;
+  width: 232px !important;
+  left: -54px;
+}
+.eyes img {
+  top: -38px;
+  left: 33px;
+  width: 244px !important;
+}
+.choices-wraper {
+  background-color: beige;
+  padding: 20px;
 }

@@ -25,3 +25,10 @@ export const changeBorderRadiusAction = (value) => {
     payload: value,
   }
 }
+
+export const changeColorAction = (value) => {
+  return {
+    type: 'CHANGE_COLOR',
+    payload: value,
+  }
+}

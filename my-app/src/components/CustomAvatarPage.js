@@ -1,37 +1,12 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { connect } from 'react-redux';
-
-import {
-  changeSizeAction,
-  changeBorderRadiusAction,
-} from '../actions';
 
 import './Main.css';
 import {Row, Col} from 'react-materialize'
 import CustomAvatarForm from './CustomAvatarForm.js'
+import TabChoices from './TabChoices.js'
 
 class Main extends Component {
-  componentWillMount() {
-    this.getData()
-    this.state = {
-      eyes: 'eyes1',
-      nose: 'nose2',
-      mouth: 'mouth3',
-      color: 'FF9800',
-    }
-  }
-
-  getData() {
-    axios.get('https://api.adorable.io/avatars/list')
-    .then(function (response) {
-      console.log(response.data);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-  }
-
   render() {
     return (
       <div className="Main">
@@ -40,7 +15,7 @@ class Main extends Component {
             <Row>
               <Col s={6} className="flex-center">
                 <img
-                src={`https://api.adorable.io/avatars/face/${this.state.eyes}/${this.state.nose}/${this.state.mouth}/FF9800`}
+                src={`https://api.adorable.io/avatars/face/${this.props.face.components.eyes}/${this.props.face.components.nose}/${this.props.face.components.mouth}/${this.props.face.components.color}`}
                 style={{
                   borderRadius:`${this.props.face.borderRadius}%`,
                   width:`${this.props.face.size}px`,
@@ -54,23 +29,9 @@ class Main extends Component {
               </Col>
             </Row>
             <Row>
-              <ul>
-                <li className="radio-image">
-                  <p>
-                    <input name="group1" type="radio" id="test1" value='urban' className='big-radio' />
-                    <label htmlFor="test1">
-                      <div className="mouth-img-wrapper">
-                        <img
-                          src={`https://api.adorable.io/avatars/face/${this.state.eyes}/${this.state.nose}/${this.state.mouth}/FF9800`}
-                          style={{
-                            width:'200px',
-                            margin: 'auto'
-                          }} alt='' />
-                      </div>
-                    </label>
-                  </p>
-                </li>
-              </ul>
+              <Col s={12}>
+                <TabChoices />
+              </Col>
             </Row>
           <div className="columns">
           </div>
@@ -87,11 +48,4 @@ const mapStateToProps = (state) => {
   };
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    changeSize: (size) => dispatch(changeSizeAction(size)),
-    changeBorderRadius: (value) => dispatch(changeBorderRadiusAction(value)),
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+export default connect(mapStateToProps, null)(Main);
